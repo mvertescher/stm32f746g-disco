@@ -1,0 +1,31 @@
+[package]
+authors = ["Matt Vertescher <mvertescher@gmail.com>"]
+categories = ["embedded", "hardware-support", "no-std"]
+description = "Board Support Crate for the STM32F746G-DISCOVERY"
+edition = "2018"
+keywords = ["arm", "cortex-m", "stm32"]
+license = "MIT OR Apache-2.0"
+name = "stm32f746g-disco"
+version = "0.1.0"
+
+[dependencies]
+
+[dependencies.stm32f4xx-hal]
+features = ["stm32f7x6"]
+git = {}
+
+[dev-dependencies]
+cortex-m = "0.5.8"
+cortex-m-rt = "0.6.7"
+cortex-m-semihosting = "0.3.2"
+nb = "0.1.1"
+panic-halt = "0.2.0"
+panic-semihosting = "0.5.1"
+
+[features]
+rt = ["stm32f7xx-hal/rt"]
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
