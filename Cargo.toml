@@ -1,7 +1,7 @@
 [package]
 authors = ["Matt Vertescher <mvertescher@gmail.com>"]
 categories = ["embedded", "hardware-support", "no-std"]
-description = "Board Support Crate for the STM32F746G-DISCOVERY"
+description = "Board Support Crate for the STM32F746G-Discovery"
 edition = "2018"
 keywords = ["arm", "cortex-m", "stm32"]
 license = "MIT OR Apache-2.0"
@@ -10,9 +10,10 @@ version = "0.1.0"
 
 [dependencies]
 
-[dependencies.stm32f4xx-hal]
-features = ["stm32f7x6"]
-git = {}
+[dependencies.stm32f7xx-hal]
+features = ["stm32f746"]
+git = "https://github.com/mvertescher/stm32f7xx-hal.git"
+branch = "master"
 
 [dev-dependencies]
 cortex-m = "0.5.8"
