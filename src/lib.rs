@@ -18,3 +18,19 @@ macro_rules! user_led {
         }
     }
 }
+
+/// Configure the default serial port with the default configuration.
+#[macro_export]
+macro_rules! serial {
+    ($p:ident, $clocks:ident) => {
+        {
+            let gpioa = $p.GPIOA.split();
+            let gpiob = $p.GPIOB.split();
+
+            let tx = gpioa.pa9.into_alternate_af7();
+            let rx = gpiob.pb7.into_alternate_af7();
+
+            stm32f746g_disco::hal::serial::Serial::usart1($p.USART1, (tx, rx), 115_200.bps(), $clocks)
+        }
+    };
+}
