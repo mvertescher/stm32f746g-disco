@@ -5,6 +5,10 @@
 
 WIP: Board support crate for the STM32F746G-Discovery.
 
+## Resources
+
+- [Landing Page](https://www.st.com/en/evaluation-tools/32f746gdiscovery.html)
+
 ## License
 
 Licensed under either of
